@@ -22,6 +22,7 @@ public class HundredDoorTest {
 		}
 	}
 	
+	@Test
 	public void inSecondRoundThenEvenDoorShouldBeClose() {
 		Doors doors = new Doors(2, 4);
 		assertTrue(doors.getDoors()[0]);
