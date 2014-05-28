@@ -12,7 +12,7 @@ public class Doors {
 	public boolean[] getDoors() {
 		boolean[] doors = new boolean[MAX_DOOR];
 		if (round == 0)
-			return new boolean[MAX_DOOR];
+			return doors;
 		for (int i = 0; i < MAX_DOOR; i++) {
 			doors[i] = true;
 		}
