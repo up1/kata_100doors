@@ -29,6 +29,16 @@ public class Doors {
 					doors[i] = false;
 			}
 		}
+		if (this.round == 3) {
+			for (int i = 0; i < this.numberOfDoor; i++) {
+				if ((i + 1) % 2 == 0)
+					doors[i] = !doors[i];
+			}
+			for (int i = 0; i < this.numberOfDoor; i++) {
+				if ((i + 1) % this.round == 0)
+					doors[i] = !doors[i];
+			}
+		}
 		return doors;
 	}
 

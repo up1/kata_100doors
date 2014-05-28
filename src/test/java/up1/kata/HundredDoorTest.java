@@ -33,7 +33,7 @@ public class HundredDoorTest {
 	
 	@Test
 	public void inThridRoundThenEvenDoorShouldBeClose() {
-		Doors doors = new Doors(2, 6);
+		Doors doors = new Doors(3, 6);
 		assertTrue(doors.getDoors()[0]);
 		assertFalse(doors.getDoors()[1]);
 		assertFalse(doors.getDoors()[2]);
