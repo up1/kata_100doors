@@ -17,16 +17,20 @@ public class Doors {
 
 	public boolean[] getDoors() {
 		boolean[] doors = new boolean[this.numberOfDoor];
-		if (round == 0)
+		if (this.round == 0)
 			return doors;
 
 		for (int count = 1; count <= this.round; count++) {
 			for (int i = 0; i < this.numberOfDoor; i++) {
-				if ((i + 1) % count == 0)
+				if (isShouldOpen(count, i))
 					doors[i] = !doors[i];
 			}
 		}
 		return doors;
+	}
+
+	private boolean isShouldOpen(int round, int curentDoor) {
+		return ((curentDoor + 1) % round == 0);
 	}
 
 }
