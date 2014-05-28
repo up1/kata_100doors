@@ -13,5 +13,13 @@ public class HundredDoorTest {
 			assertFalse(isOpen);
 		}
 	}
+	
+	@Test
+	public void inFirstRoundAllDoorShouldBeOpen() {
+		Doors doors = new Doors(1);
+		for(boolean isOpen : doors.getDoors()) {
+			assertTrue(isOpen);
+		}
+	}
 
 }
