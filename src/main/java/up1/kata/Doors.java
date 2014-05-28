@@ -17,9 +17,6 @@ public class Doors {
 
 	public boolean[] getDoors() {
 		boolean[] doors = new boolean[this.numberOfDoor];
-		if (this.round == 0)
-			return doors;
-
 		for (int count = 1; count <= this.round; count++) {
 			shouldOpenDoor(count, doors);
 		}
@@ -27,7 +24,7 @@ public class Doors {
 	}
 
 	private void shouldOpenDoor(int currentRound, boolean[] doors) {
-		for (int i = 0; i < this.numberOfDoor; i++) {
+		for (int i = currentRound - 1; i < this.numberOfDoor; i += currentRound) {
 			if (isShouldOpen(currentRound, i))
 				doors[i] = !doors[i];
 		}
