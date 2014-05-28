@@ -4,11 +4,10 @@ public class Doors {
 
 	private int round;
 	private int numberOfDoor;
-	private final int MAX_DOOR = 100;
+	private static final int MAX_DOOR = 100;
 
 	public Doors(int round) {
-		this.round = round;
-		this.numberOfDoor = MAX_DOOR;
+		this(round, MAX_DOOR);
 	}
 
 	public Doors(int round, int numberOfDoor) {
@@ -20,22 +19,10 @@ public class Doors {
 		boolean[] doors = new boolean[this.numberOfDoor];
 		if (round == 0)
 			return doors;
-		for (int i = 0; i < this.numberOfDoor; i++) {
-			doors[i] = true;
-		}
-		if (this.round == 2) {
+
+		for (int count = 1; count <= this.round; count++) {
 			for (int i = 0; i < this.numberOfDoor; i++) {
-				if ((i + 1) % this.round == 0)
-					doors[i] = false;
-			}
-		}
-		if (this.round == 3) {
-			for (int i = 0; i < this.numberOfDoor; i++) {
-				if ((i + 1) % 2 == 0)
-					doors[i] = !doors[i];
-			}
-			for (int i = 0; i < this.numberOfDoor; i++) {
-				if ((i + 1) % this.round == 0)
+				if ((i + 1) % count == 0)
 					doors[i] = !doors[i];
 			}
 		}
