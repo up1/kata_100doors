@@ -21,12 +21,16 @@ public class Doors {
 			return doors;
 
 		for (int count = 1; count <= this.round; count++) {
-			for (int i = 0; i < this.numberOfDoor; i++) {
-				if (isShouldOpen(count, i))
-					doors[i] = !doors[i];
-			}
+			shouldOpenDoor(count, doors);
 		}
 		return doors;
+	}
+
+	private void shouldOpenDoor(int currentRound, boolean[] doors) {
+		for (int i = 0; i < this.numberOfDoor; i++) {
+			if (isShouldOpen(currentRound, i))
+				doors[i] = !doors[i];
+		}
 	}
 
 	private boolean isShouldOpen(int round, int curentDoor) {
