@@ -21,5 +21,13 @@ public class HundredDoorTest {
 			assertTrue(isOpen);
 		}
 	}
+	
+	public void inSecondRoundThenEvenDoorShouldBeClose() {
+		Doors doors = new Doors(2, 4);
+		assertTrue(doors.getDoors()[0]);
+		assertFalse(doors.getDoors()[1]);
+		assertTrue(doors.getDoors()[2]);
+		assertFalse(doors.getDoors()[3]);
+	}
 
 }
